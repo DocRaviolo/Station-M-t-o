@@ -80,16 +80,10 @@ let listElementsMenu = document.getElementById("menu").getElementsByTagName("li"
 //********************* DERNIERE MESURE ****************************************************//
 //Ouverture de la fonction sur l'event click sur le choix "Dernière mesure"
 listElementsMenu[0].addEventListener("click", function () {
+    document.getElementById("affichageResultats").innerHTML = '';
     document.getElementById("divDates").innerHTML = '';
-    if (document.getElementById("affichageResultats").firstElementChild !== null) {
-        document.getElementById("affichageResultats").firstElementChild.remove()
-    }
-    if (document.getElementById("affichageResultats").firstElementChild !== null) {
-        document.getElementById("affichageResultats").firstElementChild.remove()
-    }
 
     let measureType = document.getElementById("listeDeroulante").value
-
 
 // Emplacement de l'API météo sur le net
     const baseApiUrl = 'https://spring-meteo-station-api.herokuapp.com/api/measures';
@@ -116,13 +110,8 @@ listElementsMenu[0].addEventListener("click", function () {
 //******************* TOP MESURE **************************************************************************//
 //Ouverture de la fonction sur l'event click sur le choix "Top mesure"
 listElementsMenu[1].addEventListener("click", function () {
+    document.getElementById("affichageResultats").innerHTML = '';
     document.getElementById("divDates").innerHTML = '';
-    if (document.getElementById("affichageResultats").firstElementChild !== null) {
-        document.getElementById("affichageResultats").firstElementChild.remove()
-    }
-    if (document.getElementById("affichageResultats").firstElementChild !== null) {
-        document.getElementById("affichageResultats").firstElementChild.remove()
-    }
 
     let measureType = document.getElementById("listeDeroulante").value
 
@@ -219,8 +208,9 @@ listElementsMenu[3].addEventListener("click", function () {
             graphique.id = "graphique"
             graphique.width = 500;
             document.getElementById("affichageResultats").appendChild(graphique);
+
 //Code d'affichage du graphique
-            let ctx = document.getElementById('graphique').getContext('2d');
+
             let labels = [];
             let dataSet = [];
             console.log(result);
@@ -229,23 +219,26 @@ listElementsMenu[3].addEventListener("click", function () {
                 dataSet.push(result[i]["value"]);
             }
 
-            console.log(labels);
-            console.log(dataSet);
-            let myChart = new Chart(ctx, {
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'Mesures : ' + measureType,
+                    backgroundColor: 'rgb(245,170,0)',
+                    borderColor: 'rgb(245,170,0)',
+                    data: dataSet,
+                    tension: 0.3
+                }]
+            };
+            const config = {
                 type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Courbe des ' + measureType,
-                        data: dataSet,
-                        borderColor: 'rgb(75, 192, 192)',
-                        borderWidth: 1,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                }
-            })
+                data,
+                options: {}
+            };
+            let myChart = new Chart(
+                document.getElementById('graphique'),
+                config
+            );
         })
     })
 })
+//**********************************************************************************************************//
