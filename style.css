@@ -1,0 +1,75 @@
+body{
+    text-align: center;
+    width: 60vw;
+    margin: auto;
+    border: solid 2px;
+    border-bottom: solid 4px;
+    font-family: "Times New Roman";
+}
+
+button {
+    height: 48px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+h1 {
+    width:90%;
+    background-color: orange;
+    padding: 1rem;
+    margin : auto;
+    margin-top: 1rem;
+}
+
+li {
+    list-style-type:none;
+    font-family: arial;
+    color : cadetblue;
+}
+
+a {
+    color:cadetblue;
+    text-decoration: none;
+    font-weight: bolder;
+    width: auto;
+}
+
+.parametres {
+    border : dashed cadetblue;
+    width:90%;
+    padding: 1rem;
+    margin : auto;
+    margin-top: 1rem;
+}
+
+#dates {
+    border : dashed cadetblue;
+    width:90%;
+    padding: 1rem;
+    margin : auto;
+    margin-top: 1rem;
+}
+
+#affichageResultats {
+    border : dashed orange;
+    width:90%;
+    padding: 1rem;
+    margin : auto;
+    margin-top: 1rem;
+    margin-bottom:2rem;
+    justify-content: right;
+}
+
+table {
+    margin: auto;
+    table-layout: auto;
+    width: 40%;
+    justify-content: center;
+    border:thin solid;
+    border-collapse: collapse;
+}
+
+td,th {
+    border : thin solid;
+}

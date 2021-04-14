@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+    <h1>🌞 Station météo de la promo Natx 💧</h1>
+</header>
+<main id="main">
+<section class="choix">
+<ul id="menu">
+    <li><a href="#dernière mesure">Dernière mesure</a></li>
+    <li><a href="#top mesure">Top mesures</a></li>
+    <li><a href="#contact">Tableau des mesures</a></li>
+    <li><a href="#about">Graphique des mesures</a></li>
+</ul>
+</section>
+
+<section class="parametres">
+    <h2>Quelle mesure vous intéresse ?</h2>
+
+    <label>Type de mesure</label>
+    <select id="listeDeroulante">
+        <option value="TEMPERATURE">Température</option>
+        <option value="PRESSURE">Pression</option>
+        <option value="HUMIDITY">Humidité</option>
+        <option value="CO2">CO2</option>
+        <option value="VOC">VOC</option>
+    </select>
+</section>
+<div id="divDates">
+
+</div>
+<section id="affichageResultats">
+
+</section>
+</main>
+</body>
+<script src="script.js"></script>
+</html>
